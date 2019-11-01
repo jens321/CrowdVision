@@ -6,7 +6,6 @@ Click==7.0
 cloudpickle==1.2.2
 cycler==0.10.0
 Cython==0.29.13
--e git+git@github.com:facebookresearch/detectron2.git@8863132c2c121311336146f90c036145aa9c8daf#egg=detectron2
 Flask==1.1.1
 fvcore==0.1
 grpcio==1.24.3
