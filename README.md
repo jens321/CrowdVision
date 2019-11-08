@@ -1,1 +1,2 @@
 # CrowdVision
+CrowdVision is a project that aims to count the number of people in an image taken by a Raspberry Pi. This is a general task that can be used for many purposes. In our case, we will use this system to provide UCI students with occupancy data through means of a web app. This way we hope students will have an easier time finding a study place that works for them. 
