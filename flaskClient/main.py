@@ -3,7 +3,7 @@ import json
 import cv2
 
 def send_img(filename):
-    addr = 'https://whispering-woodland-89327.herokuapp.com'
+    addr = 'http://127.0.0.1:5000'
     test_url = addr + '/api/test'
 
     content_type = 'image/jpeg'
@@ -18,4 +18,4 @@ def send_img(filename):
     print(json.loads(response.text))
 
 if __name__ == "__main__":
-    send_img('dog.jpg')
+    send_img('../microsoft.jpeg')
