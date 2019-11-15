@@ -6,8 +6,8 @@ Click==7.0
 cloudpickle==1.2.2
 cycler==0.10.0
 Cython==0.29.14
-torch==1.3.1
-torchvision==0.4.2
+https://files.pythonhosted.org/packages/7e/94/0ed9f7899aa0f5e7ff753a3a2b6944c146eef3f4cd51c59ab07c4575992b/torch-1.3.1-cp37-none-macosx_10_7_x86_64.whl
+https://files.pythonhosted.org/packages/fa/71/0e76ba50c8c9aeb8349d827d02278c1b5eb4da9cdc17ca26b5bd47ec034a/torchvision-0.4.2-cp37-cp37m-macosx_10_7_x86_64.whl
 Flask==1.1.1
 grpcio==1.24.3
 gunicorn==19.9.0
