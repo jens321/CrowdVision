@@ -18,4 +18,4 @@ def send_img(filename):
     print(json.loads(response.text))
 
 if __name__ == "__main__":
-    send_img('microsoft.jpeg')
+    send_img('study_room.jpg')
