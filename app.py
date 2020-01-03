@@ -39,6 +39,7 @@ cfg.merge_from_file("./detectron2_repo/configs/COCO-InstanceSegmentation/mask_rc
 cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.5  # set threshold for this model
 # Find a model from detectron2's model zoo. You can either use the https://dl.fbaipublicfiles.... url, or use the following shorthand
 cfg.MODEL.WEIGHTS = "https://dl.fbaipublicfiles.com/detectron2/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl"
+print("Instantiating model ...")
 predictor = DefaultPredictor(cfg)
 print("size of model", get_size(predictor))
 print("type of model", type(predictor))
