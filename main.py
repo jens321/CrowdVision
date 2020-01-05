@@ -1,11 +1,15 @@
 from flask import Flask, request, Response
 import jsonpickle
 import sys 
+import resource
 import numpy as np
 import cv2
 import detectron2
 from detectron2.utils.logger import setup_logger
 setup_logger()
+
+from guppy import hpy
+h = hpy()
 
 from detectron2.engine import DefaultPredictor
 from detectron2.config import get_cfg
@@ -41,6 +45,7 @@ cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.5  # set threshold for this model
 cfg.MODEL.WEIGHTS = "https://dl.fbaipublicfiles.com/detectron2/COCO-InstanceSegmentation/mask_rcnn_R_50_FPN_3x/137849600/model_final_f10217.pkl"
 print("Instantiating model ...")
 predictor = DefaultPredictor(cfg)
+print('Memory usage: %s (kb)' % resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)
 print("size of model", get_size(predictor))
 print("type of model", type(predictor))
 
@@ -51,11 +56,13 @@ def index():
 
 @app.route('/api/test', methods=['POST'])
 def test():
+    print(h.heap())
     r = request
 
     nparr = np.fromstring(r.data, np.uint8)
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
     outputs = predictor(img)
+    print('Memory usage: %s (kb)' % resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)
     print("size of outputs", get_size(outputs))
     # info_dict = outputs['instances'].get_fields()
     # info_dict['pred_boxes'] = info_dict['pred_boxes'][[2, 3, 5, 8]]
