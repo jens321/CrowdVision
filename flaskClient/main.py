@@ -3,7 +3,7 @@ import json
 import cv2
 
 def send_img(filename):
-    addr = 'http://127.0.0.1:5000'
+    addr = 'http://crowdvision.us-east-1.elasticbeanstalk.com'
     test_url = addr + '/api/test'
 
     content_type = 'image/jpeg'
